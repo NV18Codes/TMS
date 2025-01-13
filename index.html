@@ -6,41 +6,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Triangle Material Supplies</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Hero fade-in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        /* Card hover animation */
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Button hover scale effect */
+        .btn:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
 
 <body class="bg-gray-100 text-gray-800 font-sans">
 
     <!-- Header -->
-    <header class="bg-black text-white py-4 shadow-lg">
+    <!-- Header -->
+    <header class="bg-yellow-600 text-white py-4 shadow-md sticky top-0 z-50">
         <div class="container mx-auto flex justify-between items-center px-4">
             <div class="flex items-center">
-                <img src="img\logo.jpg" alt="TMS Logo" class="h-12 mr-3">
-                <h1 class="text-xl font-bold">Triangle Material Supplies</h1>
+                <img src="img/logo.jpg" alt="TMS Logo" class="h-10 mr-3">
+                <h1 class="text-xl font-bold"><a href="index.html">Triangle Material Supplies</h1></a>
             </div>
             <nav>
                 <ul class="hidden md:flex space-x-6">
-                    <li><a href="index.html" class="hover:text-yellow-500 transition duration-300">Home</a></li>
-                    <li><a href="about_us.html" class="hover:text-yellow-500 transition duration-300">About Us</a></li>
-                    <li><a href="#services" class="hover:text-yellow-500 transition duration-300">Services</a></li>
-                    <li><a href="contact.html" class="hover:text-yellow-500 transition duration-300">Contact</a></li>
+                    <li><a href="index.html" class="hover:text-black transition duration-300 nav-link active">Home</a>
+                    </li>
+                    <li><a href="about_us.html" class="hover:text-black transition duration-300 nav-link ">About</a>
+                    </li>
+                    <li><a href="#services" class="hover:text-black transition duration-300">Services</a></li>
+                    <li><a href="contact.html" class="hover:text-black transition duration-300 nav-link">Contact</a>
+                    </li>
                 </ul>
             </nav>
-            <button class="md:hidden text-yellow-500 focus:outline-none">Menu</button>
+            <button class="md:hidden text-black focus:outline-none">Menu</button>
         </div>
     </header>
 
+
     <!-- Hero Section -->
-    <section class="relative bg-yellow-600 text-white h-[60vh] flex items-center justify-center">
-        <div class="text-center px-4">
-            <h2 class="text-4xl md:text-5xl font-bold leading-tight">Reliable Construction Material Supplies</h2>
-            <p class="mt-4 text-lg md:text-xl">Delivering top-quality materials and services to support your projects.
+    <section id="home" class="relative h-[70vh] flex items-center justify-center">
+        <!-- Video Background -->
+        <video autoplay muted loop class="absolute inset-0 w-full h-full object-cover opacity-50">
+            <source src="https://cdn.pixabay.com/video/2021/09/11/88220-602915848_tiny.mp4" type="video/mp4">
+        </video>
+
+        <!-- Content Overlay -->
+        <div class="text-center px-4 bg-black bg-opacity-50 p-6 rounded-lg fade-in z-10">
+            <h2 class="text-4xl md:text-5xl font-bold leading-tight text-white">Reliable Construction Material Supplies
+            </h2>
+            <p class="mt-4 text-lg md:text-xl text-gray-200">
+                Delivering top-quality materials and services to support your projects.
             </p>
-            <a href="#services"
-                class="mt-6 inline-block bg-black text-yellow-500 px-6 py-3 rounded hover:bg-yellow-500 hover:text-black transition duration-300">
-                Explore Services
-            </a>
         </div>
     </section>
+
 
     <!-- About Us Section -->
     <section id="about" class="py-16 bg-gray-100">
@@ -49,7 +88,7 @@
             <div class="grid md:grid-cols-2 gap-8 items-center">
                 <div>
                     <img src="https://cdn.pixabay.com/photo/2024/06/28/07/19/factory-8858790_1280.png" alt="About Us"
-                        class="rounded-lg shadow-lg">
+                        class="rounded-lg shadow-lg hover:shadow-xl transition duration-300">
                 </div>
                 <div>
                     <p class="text-lg text-gray-600 leading-relaxed">
@@ -71,21 +110,23 @@
         <div class="container mx-auto px-4">
             <h3 class="text-3xl font-bold text-center mb-10">Our Services</h3>
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition duration-300">
+                <div class="bg-white p-6 rounded-lg shadow card transition duration-300 transform">
                     <img src="https://cdn.pixabay.com/photo/2020/09/14/20/39/vans-5572117_1280.png"
                         alt="Delivery Service" class="w-full h-40 object-cover rounded">
                     <h4 class="text-xl font-semibold mt-4">Material Delivery</h4>
                     <p class="mt-2 text-gray-600">Efficient and timely delivery of construction materials to your site.
                     </p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition duration-300">
-                    <img src="https://cdn.pixabay.com/photo/2012/04/26/19/02/tractor-42864_1280.png" alt="Equipment Rentals" class="w-full h-40 object-cover rounded">
+                <div class="bg-white p-6 rounded-lg shadow card transition duration-300 transform">
+                    <img src="https://cdn.pixabay.com/photo/2012/04/26/19/02/tractor-42864_1280.png"
+                        alt="Equipment Rentals" class="w-full h-40 object-cover rounded">
                     <h4 class="text-xl font-semibold mt-4">Excavation Equipment</h4>
                     <p class="mt-2 text-gray-600">Access to premium-grade excavation machinery and tools for all
                         projects.</p>
                 </div>
-                <div class="bg-white p-6 rounded-lg shadow hover:shadow-lg transition duration-300">
-                    <img src="https://cdn.pixabay.com/photo/2012/04/26/19/02/tractor-42864_1280.png" alt="Consultation" class="w-full h-40 object-cover rounded">
+                <div class="bg-white p-6 rounded-lg shadow card transition duration-300 transform">
+                    <img src="https://cdn.pixabay.com/photo/2012/04/26/19/02/tractor-42864_1280.png" alt="Consultation"
+                        class="w-full h-40 object-cover rounded">
                     <h4 class="text-xl font-semibold mt-4">Project Consultation</h4>
                     <p class="mt-2 text-gray-600">Expert guidance to ensure your construction projects are successful.
                     </p>
@@ -116,7 +157,7 @@
                             class="w-full px-4 py-2 rounded bg-gray-100 text-black focus:outline-none"></textarea>
                     </div>
                     <button
-                        class="bg-black text-yellow-500 px-6 py-2 rounded hover:bg-yellow-500 hover:text-black transition duration-300">
+                        class="bg-black text-yellow-500 px-6 py-2 rounded btn transition duration-300 ease-in-out hover:bg-yellow-500 hover:text-black">
                         Send Message
                     </button>
                 </form>
